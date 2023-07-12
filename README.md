@@ -2,14 +2,13 @@
 
 O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos novos ou semi-novos, para revendas.
 
-Diagrama Entidade Relacionamento:
-Possui 4 (quatro) entidades:
-  Carros - representam os veiculos a ser cadastrados;
-  Categoria - representa a categoria do veiculo;
-  Modelo - Especifica o modelo do veiculo;
-  Marca - Especifica a marca;
-Abaixo será descrito a API de cada entidade;
-
+<h3>Diagrama Entidade Relacionamento:<h3>
+<ul>
+  <li>Carros - representam os veiculos a ser cadastrados;</li>
+  <li>Categoria - representa a categoria do veiculo;</li>
+  <li>Modelo - Especifica o modelo do veiculo;</li>
+  <li>Marca - Especifica a marca;</li>
+</ul>
 <h3>Tecnologias Utilizadas:<h3>
 <ul>
   <li>C#</li>
