@@ -12,7 +12,7 @@ Abaixo será descrito a API de cada entidade;
 
 <h3>Tecnologias Utilizadas:<h3>
 <ul>
-  <li>C#/li>
+  <li>C#</li>
   <li>Asp.Net Core .Net 6.0</li>
   <li>Sql - Utilizando o SGBD SqlServer</li>
 </ul>
