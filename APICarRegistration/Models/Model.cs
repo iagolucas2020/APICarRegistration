@@ -14,7 +14,6 @@ namespace APICarRegistration.Models
         [StringLength(20)]
         public string? Name { get; set; }
 
-        [JsonIgnore]
         public ICollection<Car>? Cars { get; set; }
 
         public int BrandId { get; set; }
