@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICarRegistration.Models
 {
@@ -13,9 +14,12 @@ namespace APICarRegistration.Models
         [StringLength(20)]
         public string? Name { get; set; }
 
+        [JsonIgnore]
         public ICollection<Car>? Cars { get; set; }
 
         public int BrandId { get; set; }
+
+        [JsonIgnore]
         public Brand? Brand { get; set; }
     }
 }

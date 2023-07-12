@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICarRegistration.Models
 {
@@ -30,9 +31,13 @@ namespace APICarRegistration.Models
         public string? ImageUrl{ get; set; }
 
         public int CategoryId { get; set; }
+
+        [JsonIgnore]
         public Category? Category{ get; set; }
 
         public int ModelId { get; set; }
+
+        [JsonIgnore]
         public Model? Model { get; set; }
     }
 }

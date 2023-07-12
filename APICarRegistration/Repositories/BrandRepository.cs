@@ -16,13 +16,13 @@ namespace APICarRegistration.Repositories
 
         IEnumerable<Brand> IBrandRepository.Get()
         {
-            var brands = _context.Brands.ToList();
+            var brands = _context.Brands.AsNoTracking().Take(10).ToList();
             return brands;
         }
 
         public Brand GetById(int id)
         {
-            var brand = _context.Brands.FirstOrDefault(x => x.Id.Equals(id));
+            var brand = _context.Brands.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
             return brand;
         }
 
