@@ -17,57 +17,95 @@ namespace APICarRegistration.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<Category>> Get()
+        public async Task<ActionResult<IEnumerable<Category>>> Get()
         {
-            var category = _categoryRepository.Get().ToList();
-            if (category is null)
-                return NotFound();
-            return category;
+            try
+            {
+                var category = await _categoryRepository.GetAsync();
+                if (category is null)
+                    return NotFound();
+                return category.ToList();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem handling the request. Contact support!");
+            }
+
         }
 
         [HttpGet("{id:int}", Name = "GetCategory")]
-        public ActionResult<Category> Get(int id)
+        public async Task<ActionResult<Category>> Get(int id)
         {
-            var category = _categoryRepository.GetById(id);
-            if (category is null)
-                return NotFound();
-            return category;
+            try
+            {
+                var category = await _categoryRepository.GetByIdAsync(id);
+                if (category is null)
+                    return NotFound();
+                return category;
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem handling the request. Contact support!");
+            }
+
         }
 
         [HttpPost]
-        public ActionResult Post(Category category)
+        public async Task<ActionResult> Post(Category category)
         {
-            if (category is null)
-                return BadRequest();
+            try
+            {
+                if (category is null)
+                    return BadRequest();
 
-            _categoryRepository.Post(category);
+                await _categoryRepository.PostAsync(category);
 
-            return new CreatedAtRouteResult("GetCategory", new { id = category.Id }, category);
+                return new CreatedAtRouteResult("GetCategory", new { id = category.Id }, category);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem handling the request. Contact support!");
+            }
+
         }
 
         [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Category category)
+        public async Task<ActionResult> PutAsync(int id, Category category)
         {
-            if (id != category.Id)
-                return BadRequest();
+            try
+            {
+                if (id != category.Id)
+                    return BadRequest();
 
-            _categoryRepository.Put(category);
+                await _categoryRepository.PutAsync(category);
 
-            return Ok(category);
+                return Ok(category);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem handling the request. Contact support!");
+            }
+
 
         }
 
         [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var brand = _categoryRepository.GetById(id);
-            if (brand is null)
-                return NotFound();
+            try
+            {
+                var brand = await _categoryRepository.GetByIdAsync(id);
+                if (brand is null)
+                    return NotFound();
 
-            _categoryRepository.Delete(brand);
+                await _categoryRepository.Delete(brand);
 
-            return Ok();
-
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "There was a problem handling the request. Contact support!");
+            }
         }
     }
 }

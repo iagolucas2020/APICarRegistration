@@ -14,36 +14,36 @@ namespace APICarRegistration.Repositories
             _context = context;
         }
 
-        IEnumerable<Category> ICategoryRepository.Get()
+        public async Task<IEnumerable<Category>> GetAsync()
         {
-            var category = _context.Categories.AsNoTracking().Take(10).ToList();
+            var category = await _context.Categories.AsNoTracking().Take(10).ToListAsync();
             return category;
         }
 
-        public Category GetById(int id)
+        public async Task<Category> GetByIdAsync(int id)
         {
-            var category = _context.Categories.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
+            var category = await _context.Categories.FindAsync(id);
             return category;
         }
 
-        public Category Post(Category category)
+        public async Task<Category> PostAsync(Category category)
         {
             _context.Add(category);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return category;
         }
 
-        public Category Put(Category category)
+        public async Task<Category> PutAsync(Category category)
         {
             _context.Entry(category).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return category;
         }
 
-        public void Delete(Category category)
+        public async Task Delete(Category category)
         {
             _context.Remove(category);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

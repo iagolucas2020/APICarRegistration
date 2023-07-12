@@ -14,36 +14,36 @@ namespace APICarRegistration.Repositories
             _context = context;
         }
 
-        IEnumerable<Brand> IBrandRepository.Get()
+        public async Task<IEnumerable<Brand>> GetAsync()
         {
-            var brands = _context.Brands.AsNoTracking().Take(10).ToList();
+            var brands = await _context.Brands.AsNoTracking().Take(10).ToListAsync();
             return brands;
         }
 
-        public Brand GetById(int id)
+        public async Task<Brand> GetByIdAsync(int id)
         {
-            var brand = _context.Brands.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
+            var brand = await _context.Brands.FindAsync(id);
             return brand;
         }
 
-        public Brand Post(Brand brand)
+        public async Task<Brand> PostAsync(Brand brand)
         {
             _context.Add(brand);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return brand;
         }
 
-        public Brand Put(Brand brand)
+        public async Task<Brand> PutAsync(Brand brand)
         {
             _context.Entry(brand).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return brand;
         }
 
-        public void Delete(Brand brand)
+        public async Task Delete(Brand brand)
         {
             _context.Remove(brand);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

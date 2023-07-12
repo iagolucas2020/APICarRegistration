@@ -4,10 +4,10 @@ namespace APICarRegistration.Repositories.Interfaces
 {
     public interface IBrandRepository
     {
-        IEnumerable<Brand> Get();
-        Brand GetById(int id);
-        Brand Post(Brand brand);
-        Brand Put(Brand brand);
-        void Delete(Brand brand);
+        Task<IEnumerable<Brand>> GetAsync();
+        Task<Brand> GetByIdAsync(int id);
+        Task<Brand> PostAsync(Brand brand);
+        Task<Brand> PutAsync(Brand brand);
+        Task Delete(Brand brand);
     }
 }
