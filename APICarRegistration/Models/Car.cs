@@ -16,6 +16,14 @@ namespace APICarRegistration.Models
         [Column(TypeName = "decimal(10,2)")]
         public decimal Price { get; set; }
 
+        [Required]
+        [StringLength(4)]
+        public string? ModelYear { get; set; }
+
+        [Required]
+        [StringLength(4)]
+        public string? ManufactureYear { get; set; }
+
         public DateTime RegisterDate { get; set; }
 
         [StringLength(300)]
