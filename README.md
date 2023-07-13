@@ -23,7 +23,7 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
 <ul>
   <li>C#</li>
   <li>Asp.Net Core .Net 6.0</li>
-  <li>Sql - Utilizando o SGBD SqlServer</li>
+  <li>Sql - Utilizando o SGBD- SQL Server Management Studio</li>
 </ul>
 <h3>Acesso ao banco com biblioteca Entity Framework;<h3>
 <h3>Foi realizado testes unitários das classes utilizando biblioteca fluent Assert;<h3>
