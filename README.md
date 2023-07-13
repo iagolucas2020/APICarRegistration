@@ -37,6 +37,14 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
   <li>PUT    /Brands/{id}</li>
   <li>DELETE /Brands/{id}</li>
 </ul>
+
+```json
+{
+  {
+    "name": "string"
+  }
+}
+```
   
 <h3>Cars<h3>
 <ul>
@@ -47,6 +55,21 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
   <li>DELETE /Cars/{id}</li>
 </ul>
 
+```json
+{
+  {
+    "description": "string",
+    "price": 0,
+    "modelYear": "stri",
+    "manufactureYear": "stri",
+    "registerDate": "2023-07-13T16:48:26.591Z",
+    "imageUrl": "string",
+    "categoryId": 0,
+    "modelId": 0
+  }
+}
+```
+
 <h3>Categories<h3>
 <ul>
   <li>GET    /Categories</li>
@@ -56,11 +79,30 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
   <li>DELETE /Categories/{id}</li>
 </ul>
 
+```json
+{
+  {
+    "name": "string"
+  }
+}
+```
+
 <h3>Models<h3>
 <ul>
   <li>GET    /Models</li>
+  <li>GET    /Models/models</li>
   <li>POST   /Models</li>
   <li>GET    /Models/{id}</li>
   <li>PUT    /Models/{id}</li>
   <li>DELETE /Models/{id}</li>
 </ul>
+
+```json
+{
+  {
+    "id": 0,
+    "name": "string",
+    "brandId": 0
+  }
+}
+```
