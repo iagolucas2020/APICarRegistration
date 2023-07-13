@@ -21,7 +21,7 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
 <h3>Acesso ao banco com biblioteca Entity Framework;<h3>
 <h3>Foi realizar testes unitários das classes utilizando biblioteca fluent Assert;<h3>
 
-<h2>Endpoint<h2>
+<h2>End Points<h2>
 <h3>Brands<h3>
 <ul>
   <li>/Brands</li>
