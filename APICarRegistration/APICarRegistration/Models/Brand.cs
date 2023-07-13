@@ -9,11 +9,6 @@ namespace APICarRegistration.Models
     [Table("Brands")]
     public sealed class Brand
     {
-        public Brand()
-        {
-            Models = new Collection<Model>();
-        }
-
         [Key]
         public int Id { get; set; }
 
@@ -23,6 +18,11 @@ namespace APICarRegistration.Models
 
         [JsonIgnore]
         public ICollection<Model>? Models{ get; set; }
+
+        public Brand()
+        {
+            Models = new Collection<Model>();
+        }
 
         public Brand(string? name)
         {
@@ -35,7 +35,6 @@ namespace APICarRegistration.Models
             Id = id;
             ValidateDomain(name);
         }
-
 
         private void ValidateDomain(string name)
         {

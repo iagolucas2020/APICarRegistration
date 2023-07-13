@@ -1,5 +1,4 @@
 using APICarRegistration.Models;
-using APICarRegistration.Repositories.Interfaces;
 using FluentAssertions;
 
 namespace APICarRegistration.Tests

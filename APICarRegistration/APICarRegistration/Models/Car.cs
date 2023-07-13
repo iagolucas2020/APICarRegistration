@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using APICarRegistration.Validation;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -39,5 +40,34 @@ namespace APICarRegistration.Models
 
         [JsonIgnore]
         public Model? Model { get; set; }
+
+        public Car(int id, string? description, decimal price, string? modelYear, string? manufactureYear, DateTime registerDate, string? imageUrl)
+        {
+            DomainExceptionValidation.When(id < 0, "Invalid Id value");
+            Id = id;
+            ValidateDomain(description, price, modelYear, manufactureYear, registerDate, imageUrl);
+        }
+
+        private void ValidateDomain(string description, decimal price, string? modelYear, string? manufactureYear, DateTime registerDate, string imageUrl)
+        {
+            DomainExceptionValidation.When(string.IsNullOrEmpty(description), "Invalid description.Description is required");
+
+            DomainExceptionValidation.When(description.Length > 100, "Invalid description, too long");
+
+            DomainExceptionValidation.When(price < 0, "Invalid price value");
+
+            DomainExceptionValidation.When(string.IsNullOrEmpty(modelYear), "Invalid Modey Year is required");
+
+            DomainExceptionValidation.When(string.IsNullOrEmpty(manufactureYear), "Invalid Manufacture Year is required");
+
+            DomainExceptionValidation.When(imageUrl.Length > 250, "Invalid image name, too long");
+
+            Description = description;
+            Price = price;
+            ModelYear = modelYear;
+            ManufactureYear = manufactureYear;
+            RegisterDate = registerDate;
+            ImageUrl = imageUrl;
+        }
     }
 }
