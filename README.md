@@ -31,36 +31,36 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
 <h2>End Points<h2>
 <h3>Brands<h3>
 <ul>
-  <li>/Brands</li>
-  <li>/Brands</li>
-  <li>/Brands/{id}</li>
-  <li>/Brands/{id}</li>
-  <li>/Brands/{id}</li>
+  <li>GET    /Brands</li>
+  <li>POST   /Brands</li>
+  <li>GET    /Brands/{id}</li>
+  <li>PUT    /Brands/{id}</li>
+  <li>DELETE /Brands/{id}</li>
 </ul>
   
-<h3>Brands<h3>
+<h3>Cars<h3>
 <ul>
-  <li>/Cars</li>
-  <li>/Cars</li>
-  <li>/Get/{id}</li>
-  <li>/Cars/{id}</li>
-  <li>/Cars/{id}</li>
+  <li>GET    /Cars</li>
+  <li>POST   /Cars</li>
+  <li>GET    /Cars/{id}</li>
+  <li>PUT    /Cars/{id}</li>
+  <li>DELETE /Cars/{id}</li>
 </ul>
 
 <h3>Categories<h3>
 <ul>
-  <li>/Categories</li>
-  <li>/Categories</li>
-  <li>/Categories/{id}</li>
-  <li>/Categories/{id}</li>
-  <li>/Categories/{id}</li>
+  <li>GET    /Categories</li>
+  <li>POST   /Categories</li>
+  <li>GET    /Categories/{id}</li>
+  <li>PUT    /Categories/{id}</li>
+  <li>DELETE /Categories/{id}</li>
 </ul>
 
 <h3>Models<h3>
 <ul>
-  <li>/Models</li>
-  <li>/Models</li>
-  <li>/Models/{id}</li>
-  <li>/Models/{id}</li>
-  <li>/Models/{id}</li>
+  <li>GET    /Models</li>
+  <li>POST   /Models</li>
+  <li>GET    /Models/{id}</li>
+  <li>PUT    /Models/{id}</li>
+  <li>DELETE /Models/{id}</li>
 </ul>
