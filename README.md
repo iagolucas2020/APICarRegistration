@@ -16,4 +16,3 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
   <li>Sql - Utilizando o SGBD SqlServer</li>
 </ul>
 <h3>Acesso ao banco com biblioteca Entity Framework<h3>
-<h3>Arquitetura MVC padrão repository<h3>
