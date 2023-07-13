@@ -9,10 +9,13 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
   <li>Modelo - Especifica o modelo do veiculo;</li>
   <li>Marca - Especifica a marca;</li>
 </ul>
+
+<img src="https://i.postimg.cc/D0yYvJ7n/Captura-de-tela-2023-07-12-160018.png" alt="Girl in a jacket">
+
 <h3>Tecnologias Utilizadas:<h3>
 <ul>
   <li>C#</li>
   <li>Asp.Net Core .Net 6.0</li>
   <li>Sql - Utilizando o SGBD SqlServer</li>
 </ul>
-<h3>Acesso ao banco com biblioteca Entity Framework<h3>
+<h3>Acesso ao banco com biblioteca Entity Framework;<h3>
