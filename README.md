@@ -100,7 +100,6 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
 ```json
 {
   {
-    "id": 0,
     "name": "string",
     "brandId": 0
   }
