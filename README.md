@@ -6,7 +6,7 @@ O que é a aplicação ? A aplicação tem a finalidade de cadastrar veículos n
 <ul>
   <li>Realize o clone da aplicacão git@github.com:iagolucas2020/APICarRegistration.git;</li>
   <li>Garanta que tenha instalado em sua máquina (Visual Studio, .net 6.0, Sql Server, SGBD para gerenciar banco);</li>
-  <li>Rodar o projeto e fazer a chamadas as API, por meio do swagger;</li>
+  <li>Rode o projeto e faça as chamadas nas API, por meio do swagger;</li>
 </ul>
 
 <h3>Diagrama Entidade Relacionamento:<h3>
